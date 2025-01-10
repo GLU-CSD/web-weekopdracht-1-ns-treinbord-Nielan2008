@@ -4,6 +4,7 @@
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
     border: 2px solid #000;
+    color: rgb(0, 0, 106)
 }
 
 #left{
@@ -21,10 +22,118 @@
     box-sizing: border-box;
     border: 2px solid #000;
 }
+#bluelittleblock {
+    width: 20px;
+    height: 20px;
+    font-size: 48px;
+    display: flex;
+    background-color: rgb(0, 0, 106);
+    border: 2px solid #000;
+
+    margin-top: 0px; /* Move it down */
+    margin-left: 0px; /* Move it right */
+}
+#whiteblock {
+    width: 96px;
+    height: 96px;
+    font-size: 48px;
+    display: flex;
+    background-color: rgb(214, 214, 214);   
+
+    margin-top: 30px; /* Move it down */
+    margin-left: 13.5px; /* Move it right */
+}
+
 
 #right{
     width:128px;
     height: 335px;
     background-color: rgb(0, 0, 106);
     border: 2px solid #000;
+}
+
+
+#textwhiteblockright{
+font-size: 66px;
+margin-top: 20px;
+margin-left: 0px;
+}
+
+#textwhiteblockrightb{
+    font-size: 40px;
+    margin-top: 25px;
+    margin-left: -4px;
+}
+
+#textwhiteblockrightspoor{
+    font-size: 20px;
+    margin-top: -2px;
+    margin-left: -60px;
+}
+
+#whitemiddle{
+    width: 480px;
+    height: 240px;
+    font-size: 48px;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #000;
+
+    margin-top: 0px; /* Move it down */
+    margin-left: 0px; /* Move it right */
+}
+
+#whitemiddlelowerbar{
+    width: 480px;
+    height: 25px;
+    font-size: 25px;
+    display: flex;
+    background-color: rgb(0, 0, 106);
+    border: 2px solid #000;
+    margin-top: 0px; /* Move it down */
+    margin-left: 0px; /* Move it right */
+}
+#whitemiddlelowerbartext{
+    color: white;
+    font-size: 25px;
+    margin-top: -2px; /* Move it down */
+    margin-left: 5%; /* Move it right */ 
+    width: 1000px;
+}
+
+#whitemiddletext{
+    font-size: 30px;
+    margin-top: 10px; /* Move it down */
+    margin-left: 3%; /* Move it right */ 
+}
+
+#whitemiddletextnummer{
+    font-size: 40px;
+    margin-top: 0px; /* Move it down */
+    margin-left: 3%; /* Move it right */ 
+}
+
+#whitemiddletextintercity{
+    font-size: 40px;
+    margin-top: 0px; /* Move it down */
+    margin-left: 90px; /* Move it right */ 
+}
+
+#whitemiddletext2{
+    font-size: 45px;
+    margin-top: -200px; /* Move it down */
+    margin-left: -580px; /* Move it right */ 
+}
+
+#Myimg{
+width: 107px;
+height: 45px;
+display: block;
+margin-left: 2px;
+}
+
+#whitemiddletext3{
+    font-size: 30px;
+    margin-top: -160px; /* Move it down */
+    margin-left: -160px; /* Move it right */ 
 }

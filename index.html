@@ -5,19 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekopdracht - NS-Treinbord</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
 </head>
 <body>
     <div id="container">
         <div id="left">
-            <!-- hier komt de klok -->
+            <!-- Klok wordt hier toegevoegd -->
+            <div id="clock">
+                <!-- Clock canvas wordt hier gerenderd -->
+            </div>
         </div>      
         <div id="middle">
             <!-- Hier komt de reizigers info -->
-            <p>a</p>
+            <div id="whitemiddle">
+                <div id="whitemiddletextnummer">1</div>
+                <div id="whitemiddletext">Minuut</div>
+                <div id="whitemiddletextintercity">Intercity</div>
+                <img id="Myimg" src="assets/img/ns_logo.png">
+            </div>
+            <div id="whitemiddlelowerbar">
+                <div id="whitemiddlelowerbartext">
+                    Hierna/next: 08:54 IC Venlo
+                </div>
+                <div id="whitemiddletext2">Heerlen</div>
+                <div id="whitemiddletext3">
+                    via 's-Hertogenbosch, Eindhoven, Weert, Roermond en Sittard
+                </div>
+            </div>
         </div>
+
         <div id="right">
             <!-- hier komt het spoor nummer -->
+            <div id="whiteblock">
+                <div id="bluelittleblock">
+                    <div id="textwhiteblockright">18</div>
+                    <div id="textwhiteblockrightb">b</div>
+                    <div id="textwhiteblockrightspoor">spoor</div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        // Declare variables for shape radii
+        let secondsRadius;
+        let minutesRadius;
+        let hoursRadius;
+        let clockDiameter;
+
+        function setup() {
+            const clockDiv = document.getElementById('clock');
+            const canvas = createCanvas(150, 150); // Afmetingen van de klok
+            canvas.parent(clockDiv);
+            stroke(255);
+            angleMode(DEGREES);
+
+            // Stel de radius in op basis van de canvasgrootte
+            let radius = min(width, height) / 2;
+            secondsRadius = radius * 0.71;
+            minutesRadius = radius * 0.6;
+            hoursRadius = radius * 0.5;
+            clockDiameter = radius * 1.7;
+        }
+
+        function draw() {
+            background(230);
+
+            // Verplaats het origine naar het midden van de canvas
+            translate(width / 2, height / 2);
+
+            // Teken de klokachtergrond
+            noStroke();
+            fill(244, 122, 158);
+            ellipse(0, 0, clockDiameter + 25, clockDiameter + 25);
+            fill(237, 34, 93);
+            ellipse(0, 0, clockDiameter, clockDiameter);
+
+            // Bereken de hoeken van de wijzers
+            let secondAngle = map(second(), 0, 60, 0, 360);
+            let minuteAngle = map(minute(), 0, 60, 0, 360);
+            let hourAngle = map(hour() % 12, 0, 12, 0, 360);
+
+            stroke(255);
+
+            // Second wijzer
+            push();
+            rotate(secondAngle);
+            strokeWeight(1);
+            line(0, 0, 0, -secondsRadius);
+            pop();
+
+            // Minute wijzer
+            push();
+            strokeWeight(2);
+            rotate(minuteAngle);
+            line(0, 0, 0, -minutesRadius);
+            pop();
+
+            // Hour wijzer
+            push();
+            strokeWeight(4);
+            rotate(hourAngle);
+            line(0, 0, 0, -hoursRadius);
+            pop();
+
+            // Markeringen rondom de klok
+            push();
+            strokeWeight(2);
+            for (let ticks = 0; ticks < 60; ticks += 1) {
+                point(0, -secondsRadius);
+                rotate(6);
+            }
+            pop();
+        }
+    </script>
 </body>
 </html>
